@@ -1,0 +1,29 @@
+<ion-content>
+  <form>
+
+    <ion-grid>
+      <center><img style="height: 120px;width: 120px" src="assets/logo.png" /></center>
+
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+  
+          <div>
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input name="email" type="text" [(ngModel)]="email" id="email" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input name="password" type="password"    id="password"></ion-input>
+            </ion-item>
+           
+          </div>
+          <div padding>
+            <ion-button type="submit" color="warning" expand="block" (click)="login()">Login</ion-button>
+            <ion-button type="submit" color="warning" expand="block" (click)="register()">Register</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

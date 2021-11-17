@@ -1,0 +1,10 @@
+{
+  "name": "initiative",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

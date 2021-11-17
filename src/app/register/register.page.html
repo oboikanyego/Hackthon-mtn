@@ -1,0 +1,57 @@
+<ion-content>
+  <form>
+
+    <ion-grid>
+      <center><img style="height: 120px;width: 120px" src="assets/logo.png" /></center>
+
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <center><b>Become A Member!</b></center>
+          </div>
+          <div>
+            <ion-item>
+              <ion-label position="stacked">Name</ion-label>
+              <ion-input name="name" type="text" [(ngModel)]="name" id="name" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Cellphone</ion-label>
+              <ion-input name="Cellphone" type="Cellphone"[(ngModel)]="Cellphone" id="Cellphone" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input name="Email" type="text"[(ngModel)]="Email" id="Email" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">gender</ion-label>
+              <ion-select name="gender" id="gender"  [(ngModel)]="gender" ngModel required>
+                <ion-select-option value="female">Female</ion-select-option>
+                <ion-select-option value="male">Male</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">I Want To Be?</ion-label>
+              <ion-select name="userType" id="userType"  [(ngModel)]="userType" ngModel required>
+                <ion-select-option value="Student">Student</ion-select-option>
+                <ion-select-option value="Tutor">Tutor</ion-select-option>
+                <ion-select-option value="Teacher">Teacher</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input name="password" type="password"[(ngModel)]="password" id="password" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Confirm Password</ion-label>
+              <ion-input name="cpassword" type="password"[(ngModel)]="cpassword" id="cpassword" ></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button type="submit" color="warning" expand="block" (click)="register()">Continue</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

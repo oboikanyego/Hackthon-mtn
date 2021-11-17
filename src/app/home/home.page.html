@@ -1,0 +1,110 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Initiative - Home</ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="user.userType ==='student'">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="user.userType ==='student'">
+    <div *ngIf="mycourses.length != 0">
+      <ion-card>
+        <ion-card-header>
+          <center>
+            <ion-card-subtitle>Enrolled Classes</ion-card-subtitle>
+          </center>
+        </ion-card-header>
+      </ion-card>
+      <div *ngFor="let course of myCourses">
+        <ion-card (click)="courseInfo(course)">
+          <ion-card-header>
+            <center>
+              <ion-card-subtitle>{{course.category}} - {{course.name}}</ion-card-subtitle>
+            </center>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="4">
+                Teacher
+              </ion-col>
+              <ion-col size="8">
+                {{course.facilitator_name}}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="4">
+                Duration
+              </ion-col>
+              <ion-col size="8">
+                {{course.duration}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                Time
+              </ion-col>
+              <ion-col size="8">
+                {{course.time}}
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+    </div>
+    <div *ngIf="mycourses.length ==0">
+      <ion-card>
+        <ion-card-header>
+          <center>
+            <ion-card-subtitle>Subscribe to courses</ion-card-subtitle>
+          </center>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
+  <div *ngIf="user.userType ==='Tutor'">
+
+
+    <div *ngIf="mySchedule.length != 0">
+      <ion-card>
+        <ion-card-header>
+          <center>
+            <ion-card-subtitle>My Schedule</ion-card-subtitle>
+          </center>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div *ngFor="let mySchedule of mySchedule">
+      <ion-card (click)="myScheduleInfo(mySchedule)">
+        <ion-card-header>
+          <center>
+            <ion-card-subtitle>Live - {{mySchedule.live}}</ion-card-subtitle>
+          </center>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="4">
+            Time
+            </ion-col>
+            <ion-col size="8">
+              {{mySchedule.start_time}} - {{mySchedule.end_time}}
+            </ion-col>
+          </ion-row>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngIf="mySchedule.length == 0">
+      Please create a schedule
+    </div>
+  </div>
+  <div *ngIf="user.userType ==='teacher'">
+    <p>welcome teacher </p>
+  </div>
+</ion-content>
